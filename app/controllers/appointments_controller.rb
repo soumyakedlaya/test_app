@@ -3,17 +3,18 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
-    if @appointment.valid?
-      @appointment.save
-    else
-      redirect_to "/"
-    end
+    @appointment = Appointment.create(appointment_params)
+    # if @appointment.valid?
+    #   @appointment.save
+      AppointmentMailer.sample_email(@appointment).deliver
+      redirect_to "/appointments/#{@appointment.id}"
+    # else
+    #   redirect_to "/"
+    # end
 
     # respond_to do |format|
     #   if @appointment.save
       # Tell the UserMailer to send a welcome email after save
-        AppointmentMailer.sample_email(@appointment).deliver
         #
     #     format.html { redirect_to @appointment, notice: 'User was successfully created.' }
     #     format.json { render  :show, status: :created, location: @appointment }
@@ -22,7 +23,6 @@ class AppointmentsController < ApplicationController
     #     format.json { render json: @appointment.errors, status: :unprocessable_entity }
     #   end
     # end
-    redirect_to "/appointments/#{@appointment.id}"
   end
 
   def show

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Scheduled appointments for today (<%=Date.today.strftime("%m/%d/%Y") %>): </h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Problem</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @appointments.each do |appt| %>
+          <tr>
+            <td><%=appt.name%></td>
+            <td><%=appt.email%></td>
+            <td><%=appt.phone_number%></td>
+            <td><%=appt.problem%></td>
+            <td><%=appt.date.strftime("%m/%d/%Y")%></td>
+            <td><%=appt.time.strftime("%I:%M %p")%></td>
+          </tr>
+        <% end %>
+
+
+      </tbody>
+    </table>
+  </body>
+</html>

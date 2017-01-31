@@ -52,5 +52,7 @@ end
 gem 'hirb'
 gem 'pry'
 gem 'figaro'
+gem 'bcrypt', '~> 3.1.7'
+gem 'date_validator'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -4,9 +4,13 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hi <%= @appointment.name %></h1>
+    <h3>Hi <%= @appointment.name %></h3>
     <p>
-      Sample mail sent using smtp.
+      This is an email confirming your appointment at HashTagPhoneRepair.<br>
+      Phone number: <%= @appointment.phone_number%><br>
+      Problem: <%= @appointment.problem %><br>
+      Date: <%= @appointment.date.strftime("%m/%d/%Y") %><br>
+      Time: <%= @appointment.time.strftime("%I:%M %p") %>
     </p>
   </body>
 </html>
