@@ -5,6 +5,21 @@
     <title></title>
   </head>
   <body>
+
+
+<% if false %>
+    <%= calendar number_of_days: 1, events: @appointments do |date, appts| %>
+      <%= date.day %>
+
+      <% appts.each do |appt| %>
+        <div>
+          <%= appt.time.strftime("%I:%M %p") %> <%= appt.name %>
+        </div>
+      <% end %>
+    <% end %>
+<% end %>
+
+<% if false %>
     <h1>Scheduled appointments for today (<%=Date.today.strftime("%m/%d/%Y") %>): </h1>
     <table>
       <thead>
@@ -18,7 +33,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @appointments.each do |appt| %>
+        <% @daily_appointments.each do |appt| %>
           <tr>
             <td><%=appt.name%></td>
             <td><%=appt.email%></td>
@@ -28,9 +43,53 @@
             <td><%=appt.time.strftime("%I:%M %p")%></td>
           </tr>
         <% end %>
-
-
       </tbody>
     </table>
+    <hr>
+    <br>
+<% end %>
+
+<% if false %>
+    <%= month_calendar events: @appointments do |date, appts| %>
+      <a href = ""><%= date.day %></a>
+
+      <% appts.each do |appt| %>
+        <div>
+          <%= appt.name %>
+        </div>
+      <% end %>
+    <% end %>
+<% end %>
+
+    <%= calendar number_of_days: 1, events: @appointments do |date| %>
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Problem</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+          <% @appointments.each do |appt| %>
+          <% if date.day == appt.date.day %>
+            <tbody>
+            <tr>
+              <td><%=appt.time.strftime("%I:%M %p")%></td>
+              <td><%=appt.name%></td>
+              <td><%=appt.email%></td>
+              <td><%=appt.phone_number%></td>
+              <td><%=appt.problem%></td>
+              <td><%=appt.date.strftime("%m/%d/%Y")%></td>
+            </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+
+
   </body>
 </html>

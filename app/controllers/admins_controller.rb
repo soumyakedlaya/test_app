@@ -4,7 +4,7 @@ class AdminsController < ApplicationController
   end
 
   def show
-    @appointments = Appointment.where("date = ?", Date.today)
-    # @appointments = Appointment.all
+
+    @appointments = Appointment.all.order('Date ASC').order('Time ASC')
   end
 end
