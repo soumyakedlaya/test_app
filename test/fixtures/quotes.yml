@@ -3,9 +3,11 @@
 one:
   name: MyString
   email: MyString
-  login: MyString
+  phone_number: MyString
+  problem: MyString
 
 two:
   name: MyString
   email: MyString
-  login: MyString
+  phone_number: MyString
+  problem: MyString
