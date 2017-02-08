@@ -6,11 +6,13 @@
   <body>
     <h3>Hi <%= @appointment.name %></h3>
     <p>
-      This is an email confirming your appointment at HashTagPhoneRepair.<br>
+      Your appointment at HashTagPhoneRepair has been confirmed:.<br>
       Phone number: <%= @appointment.phone_number%><br>
       Problem: <%= @appointment.problem %><br>
       Date: <%= @appointment.date.strftime("%m/%d/%Y") %><br>
-      Time: <%= @appointment.time.strftime("%I:%M %p") %>
+      Time: <%= @appointment.time.strftime("%I:%M %p") %><br>
+      <br>
+      To cancel/reschedule appointment please call the store.
     </p>
   </body>
 </html>

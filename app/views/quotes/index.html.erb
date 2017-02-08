@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Get Your Quote!</h1>
+    <form action = "/quotes" method="post">
+      <input type= "hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <label>Name: <input type = "text" name="quote[name]"></label><br>
+      <label>Email: <input type= "text" name="quote[email]"></label><br>
+      <label>Phone Number: <input type= "text" name="quote[phone_number]"></label><br>
+      <label>Problem: <input type= "text" name="quote[problem]"></label><br>
+      <input type = "submit" value="Get Quote"><br>
+    </form>
+  </body>
+</html>
