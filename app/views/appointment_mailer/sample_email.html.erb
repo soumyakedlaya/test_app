@@ -6,11 +6,12 @@
   <body>
     <h3>Hi <%= @appointment.name %>!</h3>
     <p>
-      Your appointment at HashTagPhoneRepair has been confirmed:<br>
+      Your appointment at HashTagPhoneRepair has been confirmed for <%= @appointment.date.strftime("%m/%d/%Y")%> at <%= @appointment.time.strftime("%I:%M %p")%>:<br>
       <br>Phone number: <%= @appointment.phone_number%><br>
+      Phone model: <%= @appointment.phone_model%><br>
       Problem: <%= @appointment.problem %><br>
-      Date: <%= @appointment.date.strftime("%m/%d/%Y") %><br>
-      Time: <%= @appointment.time.strftime("%I:%M %p") %><br>
+      <!-- Date: <%= @appointment.date.strftime("%m/%d/%Y") %><br>
+      Time: <%= @appointment.time.strftime("%I:%M %p") %><br> -->
       <br>
       To cancel/reschedule appointment please call the store.
     </p>

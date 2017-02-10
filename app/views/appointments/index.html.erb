@@ -11,6 +11,11 @@
       <label>Name: <input type = "text" name="appointment[name]"></label><br>
       <label>Email: <input type= "email" name="appointment[email]"></label><br>
       <label>Phone Number: <input type= "tel" name="appointment[phone_number]"></label><br>
+      <% if @phone_model.brand == "Other" %>
+        <label>Phone Model: <input type = "text" name= "appointment[phone_model]" value= "<%=@phone_model.model%>"></label><br>
+      <% else %>
+          <label>Phone Model: <input type = "text" name= "appointment[phone_model]" value= "<%=@phone_model.brand%> <%=@phone_model.model%>"></label><br>
+      <% end %>
       <label>Problem:
         <select name = "appointment[problem]">
           <option value="Digitizer replacement">Digitizer replacement</option>

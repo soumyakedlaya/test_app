@@ -1,9 +1,12 @@
 class AppointmentsController < ApplicationController
   def index
+      @phone_model = Device.find(params[:id])
+      # binding.pry
   end
 
   def create
     @appointment = Appointment.create(appointment_params)
+    # binding.pry
     # if @appointment.valid?
     #   @appointment.save
       AppointmentMailer.sample_email(@appointment).deliver
@@ -30,6 +33,8 @@ class AppointmentsController < ApplicationController
 
   private
   def appointment_params
-    params.require(:appointment).permit(:name, :email, :phone_number, :problem, :date, :time)
+    params.require(:appointment).permit(:name, :email, :phone_number, :phone_model, :problem, :date, :time)
+    # binding.pry
+
   end
 end

@@ -1,7 +1,9 @@
 Hi <%= @appointment.name %>!
-Your appointment at HashTagPhoneRepair has been confirmed:
+
+Your appointment at HashTagPhoneRepair has been confirmed for <%= @appointment.date.strftime("%m/%d/%Y")%> at <%= @appointment.time.strftime("%I:%M %p")%>:
+
 Phone number: <%= @appointment.phone_number%>
+Phone model: <%= @appointment.phone_model%>
 Problem: <%= @appointment.problem %>
-Date: <%= @appointment.date.strftime("%m/%d/%Y") %>
-Time: <%= @appointment.time.strftime("%I:%M %p") %>
+
 To cancel/reschedule appointment please call the store.
