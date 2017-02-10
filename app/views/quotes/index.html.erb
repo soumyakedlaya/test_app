@@ -9,9 +9,30 @@
     <form action = "/quotes" method="post">
       <input type= "hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <label>Name: <input type = "text" name="quote[name]"></label><br>
-      <label>Email: <input type= "text" name="quote[email]"></label><br>
-      <label>Phone Number: <input type= "text" name="quote[phone_number]"></label><br>
-      <label>Problem: <input type= "text" name="quote[problem]"></label><br>
+      <label>Email: <input type= "email" name="quote[email]"></label><br>
+      <label>Phone Number: <input type= "tel" name="quote[phone_number]"></label><br>
+      <label>Problem:
+        <select name = "quote[problem]">
+          <option value="Digitizer replacement">Digitizer replacement</option>
+          <option value="LCD replacement">LCD replacement</option>
+          <option value="Battery replacement">Battery replacement</option>
+          <option value="Front/back camera replacement">Front/back camera replacement</option>
+          <option value="Power flex replacement">Power flex replacement</option>
+          <option value="Home button flex replacement">Home button flex replacement</option>
+          <option value="Ear speaker replacement">Ear speaker replacement</option>
+          <option value="Loud speaker replacement">Loud speaker replacement</option>
+          <option value="Charging port replacement">Charging port replacement</option>
+          <option value="Headphone jack replacement">Headphone jack replacement</option>
+          <option value="Sim tray replacement">Sim tray replacement</option>
+          <option value="Proximity sensor">Proximity sensor</option>
+          <option value="WiFi antenna repair">WiFi antenna repair</option>
+          <option value="Cellular antenna repair">Cellular antenna repair</option>
+          <option value="Water damage repair">Water damage repair</option>
+          <option value="Housing conversion">Housing conversion</option>
+          <option value="Vibrator repair">Vibrator repair</option>
+          <option value="Water proof phone">Water proof phone</option>
+        </select>
+      </label><br>
       <input type = "submit" value="Get Quote"><br>
     </form>
   </body>

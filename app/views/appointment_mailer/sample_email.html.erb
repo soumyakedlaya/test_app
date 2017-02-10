@@ -4,10 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h3>Hi <%= @appointment.name %></h3>
+    <h3>Hi <%= @appointment.name %>!</h3>
     <p>
-      Your appointment at HashTagPhoneRepair has been confirmed:.<br>
-      Phone number: <%= @appointment.phone_number%><br>
+      Your appointment at HashTagPhoneRepair has been confirmed:<br>
+      <br>Phone number: <%= @appointment.phone_number%><br>
       Problem: <%= @appointment.problem %><br>
       Date: <%= @appointment.date.strftime("%m/%d/%Y") %><br>
       Time: <%= @appointment.time.strftime("%I:%M %p") %><br>
