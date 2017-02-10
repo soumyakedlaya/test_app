@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'homepage#index'
-  get '/iphone' => 'devices#showiphone'
+  get '/iphone' => 'devices#showIphone'
+  get '/ipad' => 'devices#showIpad'
+  get '/samsung' => 'devices#showSamsung'
+  get '/other' => 'devices#showOther'
   get ':id/bookappt' => 'appointments#index'
   get ':id/getquote' => 'quotes#index'
   post '/appointments' => 'appointments#create'

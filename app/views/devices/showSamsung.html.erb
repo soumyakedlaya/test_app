@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Samsung page </h1>
+     <% @samsungs.each do |samsung| %>
+      <p><%= samsung.brand%> <%= samsung.model %></p>
+      <button><a href = "/<%=samsung.id%>/getquote">Get Quote</a></button>
+      <button><a href = "/<%=samsung.id%>/bookappt">Book Appointment</a></button>
+    <% end %>
+
+  </body>
+</html>

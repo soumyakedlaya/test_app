@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Other phones page </h1>
+     <% @others.each do |other| %>
+      <p><%= other.model %></p>
+      <button><a href = "/<%=other.id%>/getquote">Get Quote</a></button>
+      <button><a href = "/<%=other.id%>/bookappt">Book Appointment</a></button>
+    <% end %>
+
+  </body>
+</html>

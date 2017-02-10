@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>iPad page </h1>
+     <% @ipads.each do |ipad| %>
+      <p><%= ipad.brand%> <%= ipad.model %></p>
+      <button><a href = "/<%=ipad.id%>/getquote">Get Quote</a></button>
+      <button><a href = "/<%=ipad.id%>/bookappt">Book Appointment</a></button>
+    <% end %>
+
+  </body>
+</html>
